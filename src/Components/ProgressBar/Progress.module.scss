@@ -1,0 +1,27 @@
+.containerstyles {
+    height: 14px;
+    border-radius: 3px;
+}
+
+.fillerstyles {
+    height: 14px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.fillerstyles::after{
+    position:absolute;
+    top:100%;
+    left:0%;
+    width:0;
+    height:2px;
+    background:#222;
+    display:block;
+    content:'';
+    transition: width 0.5s ease-in-out;
+}
+.fillerstyles:hover::after {
+    width:100%;
+}
+
+   

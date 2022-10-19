@@ -1,6 +1,6 @@
 import './App.css';
 import Progress from './Components/ProgressBar/Progress';
-import Main from './Page/Main2/Main';
+import Main from './Page/Main/Main';
 
 function App() {
   return (

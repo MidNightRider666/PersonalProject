@@ -1,11 +1,17 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Progress from './Components/ProgressBar/Progress';
+import Footer from './Components/Footer/Footer';
 import Main from './Page/Main/Main';
 
 function App() {
   return (
     <div className="App">
-                <Main/>
+      <Switch>
+      <Route path={"/"} exact>
+            <Main />
+        </Route>
+        </Switch>
+        <Footer/>
     </div>
   );
 }

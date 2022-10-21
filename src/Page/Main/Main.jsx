@@ -3,6 +3,8 @@ import slideImages from '../../Data/Data.jsx'
 import css from '../Main/Main.module.scss'
 import Button from '../../Components/Button/Button.jsx'
 import { motion } from "framer-motion"
+import Nav from '../../Components/Nav/Nav.jsx'
+
 
 
 
@@ -11,16 +13,14 @@ function Main() {
 
   const animations = {
     initial: {
-      x:200,
-      opacity: 0
+      opacity: 0, scale: 0.5
     },
     animate: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: {
-      x: -200,
-      opacity: 0
+      opacity: 1, scale: 1,
+      transition: { 
+        type:"tween",
+        duration: 1
+    }
     }
   }
 
@@ -40,19 +40,22 @@ function Main() {
     
        return (
         <div className={css.slider}>
+          <Nav/>
                 <div className={css.slide} key={currentSlide.id}>
                    <motion.img variants={animations}
+                   className={css.mainImg}
                    animate='animate'
                    initial='initial'
-                   exit='exit'
                    src={currentSlide.url} alt="img" />
                     <div className={css.content}>
+                    <img className={css.icon} src={currentSlide.icon} alt="icon" />
                       <h2>{currentSlide.caption}</h2>
                       <p>{currentSlide.desc}</p>
                       <hr />
                       <Button btnPrimary>Learn more</Button>        
         </div>
-        </div>    
+        </div>   
+        <div className={css.thumbbox}> 
         {
               slideImages.map((data, i) => {
                 return (
@@ -63,6 +66,7 @@ function Main() {
               }
               )
         }
+        </div>
         </div>
        )
 }

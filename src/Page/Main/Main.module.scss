@@ -17,23 +17,36 @@
 }
 
 
+.thumbbox {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    top: 78%;
+    padding: 5px;
+    width: 100%;
+    height: 110%;
+}
 
 .thumbnail {
     position: relative;
     display: inline-block;
-    top: 80%;
-    left: 30%;
     padding: 5px;
     cursor: pointer;
 }
 
-img {
+.thumbnail img {
     width: 90%;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 5em;
     font-family: Arial Black;
+    margin-top: 5px;
+}
+
+.content p {
+    font-size: 2em;
+    font-family:'Times New Roman', Times, serif
 }
 
 .clicked  {
@@ -61,7 +74,7 @@ h2 {
 
 
 .clicked {
-    animation: wide-up .5s ease-in .5s;
+    animation: wide-up .5s ease-in ;
     animation-fill-mode: forwards;
 }
 
@@ -94,13 +107,13 @@ h2 {
 
 
 @media screen and (min-width:600px){
-    .slide img {
+    .slide .mainImg {
         width: 100%;
         height: 100%;
     }
 }
 
-.slide img {
+.slide .mainImg {
     height: 100%;
 }
 
@@ -108,7 +121,7 @@ h2 {
     position: absolute;
     top: 23rem;
     opacity: 1;
-    left: 5rem;
+    left: 7rem;
     width: 50%;
     padding: 3rem;
     background: rgba(0,0,0,.3);
@@ -117,14 +130,20 @@ h2 {
     visibility: hidden;
 }
 
+.icon {
+    width: 20%;
+    height: 20%;
+    margin-bottom: 0;
+}
+
 @keyframes slide-up {
     0% {
         visibility: visible;
-        top: 0rem;
+        top: -5rem;
     }
     100% {
         visibility: visible;
-        top: 14rem;
+        top: 10rem;
     }
 }
 

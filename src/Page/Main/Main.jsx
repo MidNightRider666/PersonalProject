@@ -4,7 +4,7 @@ import css from '../Main/Main.module.scss'
 import Button from '../../Components/Button/Button.jsx'
 import { motion } from "framer-motion"
 import Nav from '../../Components/Nav/Nav.jsx'
-
+import { useTranslation } from 'react-i18next'
 
 
 
@@ -25,6 +25,7 @@ function Main() {
   }
 
         const [currentSlide, setCurrentSlide] = useState(slideImages[0])
+        const { t } = useTranslation()
 
          
         useEffect(() => {
@@ -49,7 +50,7 @@ function Main() {
                    src={currentSlide.url} alt="img" />
                     <div className={css.content}>
                     <img className={css.icon} src={currentSlide.icon} alt="icon" />
-                      <h2>{currentSlide.caption}</h2>
+                      <h2>{t('caption')}</h2>
                       <p>{currentSlide.desc}</p>
                       <hr />
                       <Button btnPrimary>Learn more</Button>        

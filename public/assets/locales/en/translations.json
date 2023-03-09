@@ -1,4 +1,11 @@
 {
-    "caption": "Turkish bath",
-    "desc": "Our goal is to offer you a Turkish bath that meets your needs"
+    "captions": "Turkish bath",
+    "desc": "Our goal is to offer you a Turkish bath that meets your needs",
+    "captions1": "Russian bath",
+    "desc1": "A little time to spend in a Russian sauna is not harmful, but it is useful for many heart patients.",
+    "captions2": "Finnish sauna",
+    "desc2": "Health ... An old Finnish proverb says that if a bath and vodka do not help, the disease is fatal" ,
+    "Language": "Language",
+    "Instalation": "Installation of saunas",
+    "Instalation1": "The installation of saunas, like any other repair or construction work, must be carried out according to technology and in compliance with all mandatory regulations"
 }

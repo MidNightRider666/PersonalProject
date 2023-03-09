@@ -10,16 +10,17 @@ import HttpApi from 'i18next-http-backend';
 import 'bootstrap/dist/js/bootstrap.js'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 i18n
   .use(initReactI18next) 
   .use(LanguageDetector)
   .use(HttpApi)
   .init({ 
-    suportedLngs: ['en', 'lt'],
-    fallbackLng: "en",
+    suportedLngs: ['en', 'lt', 'ru'],
+    fallbackLng: "lt",
     detection: {
-      order: ['cookie', 'htmlTag', 'localStorage','path', 'subdomain'],
+      order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
       caches: ['cookie']
     },
     backend: {

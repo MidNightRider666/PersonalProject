@@ -15,6 +15,7 @@ nav {
     bottom: 0;
     width: 100%;
     background-color: 	rgb(160,160,160);
+    opacity: 0.9;
 }
 
 button.toggle {
@@ -49,6 +50,7 @@ nav .innerNav li {
     border-bottom: 1px solid black;
 }
 nav .innerNav li a {
+    display: block;
     font-size: 1rem;
     text-decoration: none;
     color: black;

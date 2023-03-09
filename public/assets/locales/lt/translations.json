@@ -1,4 +1,11 @@
 {
-    "caption": "Turkiskos pirtys",
-    "desc": " Mūsų tikslas pasiūlyti jums poreikius atitinkančią turkišką pirtį"
+    "captions": "Turkiskos pirtys",
+    "desc": " Mūsų tikslas pasiūlyti jums poreikius atitinkančią turkišką pirtį",
+    "captions1": "Rusiskos pirtys",
+    "desc1": " Šiek tiek laiko praleisti rusiškoje pirtyje nekenkia, bet naudinga daugeliui širdies ligonių.",
+    "captions2": "Suomiskos pirtys",
+    "desc2": "Sveikata ... Sena suomių patarlė jei vonia, degtinė sakai nepadeda, liga mirtina",
+    "Language": "Kalba" ,
+    "Instalation": "Pirčių įrengimas",
+    "Instalation1": "Pirčių įrengimas, kaip ir bet kokie kiti remonto ar statybos darbai, turi būti atliekami pagal technologijas, bei laikantis visų privalomų normatyvų"
 }

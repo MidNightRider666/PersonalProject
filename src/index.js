@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 // import ReactDOM from 'react-dom';
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -8,9 +8,10 @@ import {initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import 'bootstrap/dist/js/bootstrap.js'
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+
 
 i18n
   .use(initReactI18next) 
@@ -28,6 +29,8 @@ i18n
     },
     react: {useSuspense: false}
   });
+
+
 
 const container = document.getElementById("root");
 const root = createRoot(container);

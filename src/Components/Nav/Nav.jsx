@@ -45,15 +45,21 @@ const GlobeIcon = ({ width = 24, height = 24 }) => (
 );
 
 function Nav() {
+  const pathName = window.location.pathname
+  const halfPathName = pathName.slice(4)
+  console.log(' halfPathName===', halfPathName);
   const activeStyle = { color: 'blue' };
   const currentLanguageCode = cookies.get("i18next") || "lt";
   const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
   const { t } = useTranslation();
 
+
   useEffect(() => {
     document.body.dir = currentLanguage.dir || "ltr";
     document.title = t("app_title");
   }, [currentLanguage, t]);
+
+  
 
   const [visible, setVisible] = useState(true);
   console.log("visible===", visible);
@@ -63,6 +69,8 @@ function Nav() {
     closed: { opacity: 0, x: "-100%" },
   };
 
+
+
   return (
     <>
       <motion.nav
@@ -71,13 +79,13 @@ function Nav() {
         variants={variants}
         transition={{ duration: 0.5 }}
       >
-        <motion.div className={css.innerNav}>
+        <motion.div className={css.innerNav} disabled={visible}>
           <ul>
             <motion.li 
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink className={css.Link} to={`/${i18n.language}/Installation`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
+              <NavLink  className={css.Link} to={`/${i18n.language}/Installation`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
             </motion.li>
             <motion.li
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
@@ -110,6 +118,7 @@ function Nav() {
             <div className="d-flex align-items-center language-select-root">
               <div className="dropdown">
                 <button
+                  disabled={visible}
                   className="btn btn-link dropdown-toggle"
                   type="button"
                   id="dropdownMenuButton1"
@@ -128,13 +137,19 @@ function Nav() {
                   {languages.map(({ code, name, country_code }) => (
                     <li key={country_code}>
                       <button
-                        // href={code}
                         className={classNames("dropdown-item", {
                           disabled: currentLanguageCode === code,
                         })}
                         onClick={() => {
+                          // const hostnametest = `${savedHostname}/${code}/${halfPathName}`
+                          // const savedhostnametest = `${savedHostname}`
+                          // const codetest = `${code}`
+                          // const halfpathnametest = `${halfPathName}`
                           i18next.changeLanguage(code);
-                          // window.location.reload();
+                          window.history.replaceState(null, "", `${""}/${code}/${halfPathName}`)
+                          // window.location.assign(`${""}/${code}/${halfPathName}`);
+                          // console.log("Testing: ", hostnametest)
+                          // console.log("Testing2: ", savedhostnametest, codetest, halfpathnametest)
                         }}
                       >
                         <span

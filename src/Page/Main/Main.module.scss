@@ -1,197 +1,280 @@
-.slider {
-    width: 100%;
-    height: 90vh;
-    position: relative;
-    overflow: hidden;
-    opacity: 1;
-}
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Tangerine:wght@700&display=swap");
 
+.slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+}
 
 .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
 }
 
-
 .thumbbox {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    top: 78%;
-    padding: 5px;
-    width: 100%;
-    height: 110%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  top: 75%;
+  padding: 5px;
+  width: 100%;
+  height: 110%;
 }
 
 .thumbnail {
-    position: relative;
-    display: inline-block;
-    padding: 5px;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .thumbnail img {
-    width: 90%;
-}
-
-h2 {
-    font-size: 5em;
-    font-family: Arial Black;
-    margin-top: 5px;
+  width: 90%;
 }
 
 .content p {
-    font-size: 2em;
-    font-family:'Times New Roman', Times, serif
+  font-size: 2em;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.clicked  {
-    height: 120px;
-    // width: 80%;
-    border: 2px solid black;
+.clicked {
+  height: 120px;
+  // width: 80%;
+  border: 2px solid black;
 }
 
-.thumbnail::after{
-    position:absolute;
-    top:100%;
-    left:0%;
-    width:0;
-    height:2px;
-    background:salmon;
-    display:block;
-    content:'';
-    transition: width 0.5s ease-in-out;
-    height: 5px;
+// .thumbnail::after{
+//     position:absolute;
+//     top:50%;
+//     left:0%;
+//     width:0;
+//     height:2px;
+//     background:salmon;
+//     display:block;
+//     content:'';
+//     transition: width 0.5s ease-in-out;
+//     height: 5px;
+// }
+
+.thumbnailTital {
+  position: absolute;
+  top: 25%;
+  width: 80%;
+  left: 20px;
+  color: black;
+  opacity: 0;
+}
+.thumbnail:hover {
+  .thumbnailTital {
+    animation: fadein 0.5s 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 .thumbnail:hover::after {
-    width:100%;
+  width: 100%;
 }
 
-
 .clicked {
-    animation: wide-up .5s ease-in ;
-    animation-fill-mode: forwards;
+  animation: wide-up 0.5s ease-in;
+  animation-fill-mode: forwards;
 }
 
 .thumbnail .notclicked {
-    animation: wide-down  ease-out  .5s;
-    animation-fill-mode: forwards;
+  animation: wide-down ease-out 0.5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes wide-up {
-    0% {
-        width: 90%;
-        height: 120px;
-    }
-    100% {
-        width:100%;
-        height: 130px;
-    }
+  0% {
+    width: 90%;
+    height: 120px;
+  }
+  100% {
+    width: 100%;
+    height: 130px;
+  }
 }
 
 @keyframes wide-down {
-    0% {
-        width:100%;
-        height: 130px;
-    }
-    100% {
-        width: 90%;
-        height: 120px;
-    }
+  0% {
+    width: 100%;
+    height: 130px;
+  }
+  100% {
+    width: 90%;
+    height: 120px;
+  }
 }
 
-
-@media screen and (min-width:600px){
-    .slide .mainImg {
-        width: 100%;
-        height: 100%;
-    }
+@media screen and (min-width: 600px) {
+  .slide .mainImg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .slide .mainImg {
-    height: 100%;
+  height: 100%;
 }
 
 .content {
-    position: absolute;
-    top: 23rem;
-    opacity: 1;
-    left: 7rem;
-    width: 50%;
-    padding: 3rem;
-    background: rgba(0,0,0,.3);
-    animation: slide-up 1s ease ;
-    animation-fill-mode: forwards;
-    visibility: hidden;
+  position: absolute;
+  top: 23rem;
+  opacity: 1;
+  left: 40rem;
+  width: 40%;
+  height: 40%;
+  padding: 3rem;
+  // background: rgba(0,0,0,.3);
+  border-radius: 100px;
+  animation: slide-up 1s ease;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  z-index: 100;
 }
 
 .icon {
-    width: 20%;
-    height: 20%;
-    margin-bottom: 0;
+  position: relative;
+  left: 150px;
+  width: 40%;
+  height: 40%;
+  margin-bottom: 50px;
+}
+.caption {
+  position: relative;
+  font-size: 5em;
+  font-family: "Tangerine", cursive;
+  font-family: "Marck Script", cursive;
+  color: #b73239;
+  margin-top: 5px;
+  left: 40px;
+  -webkit-text-stroke: 2px black;
+  z-index: 100;
+}
+
+.caption:hover {
+  -webkit-text-stroke: 2px blue;
+}
+
+.Link {
+  text-decoration: none;
 }
 
 @keyframes slide-up {
-    0% {
-        visibility: visible;
-        top: -5rem;
-    }
-    100% {
-        visibility: visible;
-        top: 10rem;
-    }
+  0% {
+    visibility: hidden;
+    top: -10rem;
+  }
+  100% {
+    visibility: visible;
+    top: 2rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .content {
-        width: 50%;
-    }
+  .content {
+    width: 50%;
+  }
 }
 
 .content > * {
-    color: white;
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
-
 
 .current .content {
-    opacity: 1;
+  opacity: 1;
 }
 
-// .arrow {
-//     border: 2px solid whitesmoke;
-//     border-radius: 50%;
-//     background: transparent;
-//     color: white;
-//     width: 2rem;
-//     height: 2rem;
-//     cursor: pointer;
-//     position: absolute;
-//     z-index: 999;
-//     top: 35%;
-// }
+.parent {
+  background: gray;
+  opacity: 0.95;
+  position: absolute;
+  bottom: 10px;
+  left: 48%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.child {
+  opacity: 0;
+}
 
-// .arrow:hover {
-//     background: white;
-//     color: gray;
-// }
+.parent[data-isopen="true"] {
+  bottom: 30px;
+  height: 12%;
+  .child {
+    opacity: 1;
+    bottom: 30px;
+  }
+}
 
-// .right {
-//     right: 1.5rem;
-// }
+.child {
+  position: absolute;
+  bottom: 10px;
+  left: 20%;
+  color: orange;
+}
 
-// .left {
-//     left: 1.5rem;
-// }
+.Back {
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+  z-index: 200;
+  cursor: pointer;
+  opacity: 0;
+}
 
-hr {
-    height: 2px;
-    background: whitesmoke;
-    width: 50%;
-    margin-left: 0;
+.fadeIn {
+  animation: fadein 2.5s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+.top {
+  font-size: 30px;
+  color: orange;
+  padding-top: 1.8em;
+  display: inline-block; /* or block */
+  position: relative;
+  border-color: orange;
+  text-decoration: none;
+  text-align:center;
+  transition: all 0.3s ease-out;
+}
+.top:before {
+  content: "▲";
+  font-size: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 40%;
+  margin-left: -0.4em;
+  border: solid 0.13em white;
+  border-radius: 10em;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.3em;
+  border-color: inherit;
+  transition: transform 0.5s ease-in;
+}
+.top:hover {
+  color: pink;
+  border-color: pink;
+}
+.top:hover:before {
+  transform: rotate(360deg);
 }

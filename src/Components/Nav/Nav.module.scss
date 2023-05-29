@@ -56,3 +56,11 @@ nav .innerNav li a {
     color: black;
     transition: .4s all ease-in-out;
 }
+
+.innerNav[disabled] {
+    pointer-events: none
+}
+
+button[disabled] {
+    pointer-events: none;
+}

@@ -160,7 +160,7 @@ function Main() {
           className={css.parent}
         >
           <div className={css.child}>
-            <p>About</p>
+            <p></p>
           </div>
         </motion.div>
       </div>

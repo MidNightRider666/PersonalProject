@@ -64,10 +64,14 @@
 
 .thumbnailTital {
   position: absolute;
-  top: 25%;
+  top: 20%;
   width: 80%;
   left: 20px;
-  color: black;
+  color: red;
+  -webkit-text-stroke: 0.5px black;
+  font-family: "Tangerine", cursive;
+  font-size: 35px;
+  font-family: "Marck Script", cursive;
   opacity: 0;
 }
 .thumbnail:hover {
@@ -126,11 +130,10 @@
 
 .content {
   position: absolute;
-  top: 23rem;
   opacity: 1;
-  left: 40rem;
+  left: 37rem;
   width: 40%;
-  height: 40%;
+  height: 50%;
   padding: 3rem;
   // background: rgba(0,0,0,.3);
   border-radius: 100px;
@@ -152,7 +155,7 @@
   font-size: 5em;
   font-family: "Tangerine", cursive;
   font-family: "Marck Script", cursive;
-  color: #b73239;
+  color: red;
   margin-top: 5px;
   left: 40px;
   -webkit-text-stroke: 2px black;
@@ -193,33 +196,46 @@
 }
 
 .parent {
-  background: gray;
+  background: #EDEBE1;
   opacity: 0.95;
   position: absolute;
-  bottom: 10px;
   left: 48%;
   width: 50px;
+  bottom: 10px;
   height: 50px;
   cursor: pointer;
 }
 .child {
-  opacity: 0;
+  position: absolute;
+  bottom: 10px;
+  top: 51px;
+  left: 23%;
+  color: orange;
+  font-size: 2em;
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+.child:before{
+  content: "▲";
+  left: 40%;
 }
 
 .parent[data-isopen="true"] {
-  bottom: 30px;
-  height: 12%;
+  height: 7%;
+  width: 7%;
+  left: 46%;
   .child {
     opacity: 1;
+    content: "About";
     bottom: 30px;
+    top: 15px;
+    font-size: 1.5em;
+    transform: rotate(360deg);
   }
-}
-
-.child {
-  position: absolute;
-  bottom: 10px;
-  left: 20%;
-  color: orange;
+  .child::before {
+    content: "About";
+  }
 }
 
 .Back {
@@ -266,14 +282,14 @@
   border: solid 0.13em white;
   border-radius: 10em;
   width: 1.4em;
-  height: 1.4em;
+  height: 1.6em;
   line-height: 1.3em;
   border-color: inherit;
   transition: transform 0.5s ease-in;
 }
 .top:hover {
-  color: pink;
-  border-color: pink;
+  color: red;
+  border-color: red;
 }
 .top:hover:before {
   transform: rotate(360deg);

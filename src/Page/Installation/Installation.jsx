@@ -2,9 +2,17 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import SecondNav from "../../Components/SecondNav/SecondNav";
 import css from "./Installation.module.scss";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 function Installation() {
   const { t } = useTranslation();
+  const { ref: newRef, inView: myElementIsVisible } = useInView({
+    triggerOnce: true,
+  });
+  const { ref: newRef1, inView: myElementIsVisible1 } = useInView({
+    triggerOnce: true,
+  });
 
   return (
     <div>
@@ -32,45 +40,78 @@ function Installation() {
           alt=""
         />
       </div>
-      <h1 className={css.startSecondPr}>
-        {" "}
-        Pirčių įrengimas ir projektavimas. Ką mes siūlome?{" "}
-      </h1>
-      <hr className={css.secondHr} />
-      <div className={css.list}>
+      <div
+        ref={newRef}
+        className={`${myElementIsVisible ? css.slideRight : ""}`}
+      >
+        <h1 className={css.startSecondPr}>
+          Pirčių įrengimas ir projektavimas. Ką mes siūlome?
+        </h1>
+        <hr className={css.secondHr} />
+      </div>
+      <div ref={newRef1} className={css.list}>
         <ul>
-          <li> 
-          Atvyksime į Jūsų objektą, išmatuosime patalpas.
+          <li id={`${myElementIsVisible1 ? css.firstLi : ""}`}>
+            Atvyksime į Jūsų objektą, išmatuosime patalpas.
           </li>
-          <li>
-          Pasiūlysime kelis
-        suomiškos, rusiškos ar garinės/turkiškos pirties projektų variantus,
-        suderinsime mūsų idėjas ir Jūsų lūkesčius. Suomišką, rusišką ar
-        garinę/turkišką pirtį įrengsime pagal individualius užsakymus.
+          <li id={`${myElementIsVisible1 ? css.secondLi : ""}`}>
+            Pasiūlysime kelis suomiškos, rusiškos ar garinės/turkiškos pirties
+            projektų variantus, suderinsime mūsų idėjas ir Jūsų lūkesčius.
+            Suomišką, rusišką ar garinę/turkišką pirtį įrengsime pagal
+            individualius užsakymus.
           </li>
-          <li>
-          Pakonsultuosime suomiškos, rusiškos ar garinės/turkiškos pirties
-        įrengimo klausimais. Parduosime visą suomiškos, rusiškos ar
-        garinės/turkiškos pirties įrengimui būtiną įrangą.
+          <li id={`${myElementIsVisible1 ? css.thirdLi : ""}`}>
+            Pakonsultuosime suomiškos, rusiškos ar garinės/turkiškos pirties
+            įrengimo klausimais. Parduosime visą suomiškos, rusiškos ar
+            garinės/turkiškos pirties įrengimui būtiną įrangą.
           </li>
-          <li>
-          Patys pagaminsime
-        suomiškos, rusiškos ar garinės/turkiškos pirties sienų, lubų, gultų
-        formas.
+          <li id={`${myElementIsVisible1 ? css.fourthLi : ""}`}>
+            Patys pagaminsime suomiškos, rusiškos ar garinės/turkiškos pirties
+            sienų, lubų, gultų formas.
           </li>
         </ul>
+        <img
+          className={`${css.imageSecond} ${
+            myElementIsVisible1 ? css.imgAnimation : ""
+          }`}
+          src="https://lisamora.lt/wp-content/uploads/2015/12/3.18-1024x683.jpg"
+          alt=""
+        />
       </div>
-      <hr className={css.thirdHr}/>
+      <hr className={css.thirdHr} />
       <div className={css.block}>
-        <img className={css.image} src="https://lisamora.lt/wp-content/uploads/2015/12/3.18-1024x683.jpg" alt="" />
-      <h1 className={css.lastSentence}>
-      Ne tik garantinio laikotarpio metu atliksime remonto darbus,
-        padėsime išspręsti iškilusias problemas, jei įmanoma sutaisysime Jūsų
-        suomiškos, rusiškos ar garinės/turkiškos pirties įrangą!!!!
-      </h1>
+        <img
+          className={css.image}
+          src="https://lisamora.lt/wp-content/uploads/2015/12/3.18-1024x683.jpg"
+          alt=""
+        />
+        <h1 className={css.lastSentence}>
+          Ne tik garantinio laikotarpio metu atliksime remonto darbus, padėsime
+          išspręsti iškilusias problemas, jei įmanoma sutaisysime Jūsų
+          suomiškos, rusiškos ar garinės/turkiškos pirties įrangą!!!!
+        </h1>
       </div>
     </div>
   );
 }
 
 export default Installation;
+
+{
+  //  <li className={`${myElementIsVisible1 ? css.firtLi : ""}`}>Atvyksime į Jūsų objektą, išmatuosime patalpas.</li>
+  // <li className={`${myElementIsVisible1 ? css.secondLi : ""}`}>
+  //   Pasiūlysime kelis suomiškos, rusiškos ar garinės/turkiškos pirties
+  //   projektų variantus, suderinsime mūsų idėjas ir Jūsų lūkesčius.
+  //   Suomišką, rusišką ar garinę/turkišką pirtį įrengsime pagal
+  //   individualius užsakymus.
+  // </li>
+  // <li className={`${myElementIsVisible1 ? css.thirdLi : ""}`}>
+  //   Pakonsultuosime suomiškos, rusiškos ar garinės/turkiškos pirties
+  //   įrengimo klausimais. Parduosime visą suomiškos, rusiškos ar
+  //   garinės/turkiškos pirties įrengimui būtiną įrangą.
+  // </li>
+  // <li className={`${myElementIsVisible1 ? css.fourthLi : ""}`}>
+  //   Patys pagaminsime suomiškos, rusiškos ar garinės/turkiškos pirties
+  //   sienų, lubų, gultų formas.
+  // </li>
+}

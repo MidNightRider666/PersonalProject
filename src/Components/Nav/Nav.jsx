@@ -8,7 +8,7 @@ import cookies from "js-cookie";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import i18next from "i18next";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import i18n from "i18next";
 
 const languages = [
@@ -85,7 +85,7 @@ function Nav() {
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink  className={css.Link} to={`/${i18n.language}/Installation`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
+              <NavLink  className={css.Link} as={NavLink} to={`/${i18n.language}/Installation`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
             </motion.li>
             <motion.li
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}

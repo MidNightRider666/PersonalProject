@@ -6,6 +6,7 @@ import About from './Page/About/About';
 import Installation from './Page/Installation/Installation';
 import Main from './Page/Main/Main';
 import Turkish from './Page/Turkish/Turkish';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Nav/>
+      {/* <ScrollToTop/> */}
       <Switch>
       <Route exact path={base}>
             <Main />

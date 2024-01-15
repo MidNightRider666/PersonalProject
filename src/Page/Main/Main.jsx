@@ -93,11 +93,11 @@ function Main() {
   function setUrl(data) {
     switch (data) {
       case 0:
-        return `/${i18n.language}/Installation`;
+        return `/${i18n.language}/Turkish`;
       case 1:
-        return `/${i18n.language}/Turkish`;
+        return `/${i18n.language}/Russian`;
       case 2:
-        return `/${i18n.language}/Turkish`;
+        return `/${i18n.language}/Finnish`;
     }
     console.log(data);
   }

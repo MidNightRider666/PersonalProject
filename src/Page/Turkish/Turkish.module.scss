@@ -1,178 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@600;700&family=Noto+Serif:ital,wght@1,500&family=Tinos:ital@1&display=swap');
-
-.gallery {
-    position: absolute;
-    --g: 8px;   /* the gap */
-    --s: 400px; /* the size */
-    display: grid;
-    top: 250px;
-    right: 350px;
-    border-radius: 50%;
-    z-index: 200;
-  }
-  .gallery > img {
-    grid-area: 1/1;
-    width: 200px;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 50%;
-    transform: translate(var(--_x,0),var(--_y,0));
-    cursor: pointer;
-    z-index: 0;
-    transition: .3s, z-index 0s .3s;
-  }
-  .gallery img:hover {
-    --_i: 1;
-    z-index: 1;
-    transition: transform .2s, clip-path .3s .2s, z-index 0s;
-  }
-  .gallery:hover img {
-    transform: translate(0,0);
-  }
-  .gallery > img:nth-child(1) {
-    content: "Old ways";
-    clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
-    --_x: var(--g)
-  }
-  .gallery > img:nth-child(2) {
-    clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
-    --_x: calc(-1*var(--g))
-  }
-
-  @import url('https://fonts.googleapis.com/css?family=Pirata+One|Bilbo+Swash+Caps&display=swap');
-
-  @import url('https://fonts.googleapis.com/css?family=Pirata+One|Bilbo+Swash+Caps&display=swap');
-
-  
-  :root {
-    --fontSize: calc((1vw + 1vh) * .75);
-  }
-  
-  *, *:before, *:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  
-  .body {
-    font: var(--fontSize)/200% 'Bad Script', cursive;
-    background-image: url(https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-    background-size: cover;
-  }
-
-
-  
-  #parchment {
-    position: absolute;
-    display: flex;
-    width: 75%;
-    /* center page with absolute position */
-    top: 0%; left: 35%; transform: translate(-50%, 0);
-    margin: 2em 0;
-    padding: 4em;
-    box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
-    background: #fffef0;
-    /* v2.1 : borders effect with SVG : try to play with scale to change them */
-    filter: url(#wavy2);
-    /* v2.2 : Noise added for a vellum paper effect */
-    background-image: url(data:image/png;base64,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);
-  }
-
-  main {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-  
-  main p {
-    font-size: 2.25em;
-    color: #7F3300;
-    margin-top: .75em;
-    text-align: justify;
-  }
-  
-
-  
-  #contain {
-    left: -15%;
-    position: relative;
-     display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: auto;
-    margin: 0 auto;
-    padding: 4em;
-  }
-
-  .image {
-    --s: 10px;
-    padding: var(--s);
-    border: calc(2*var(--s)) solid #0000;
-    outline: 5px solid #000;
-    outline-offset: calc(-1*var(--s));
-    background: conic-gradient(from 90deg at 5px 5px,#0000 25%,#000 0);
-    position: absolute;
-    margin-top: 10%;
-    width: 30%;
-    margin-left: 98%;
-    height: 70%;
-    -webkit-filter: grayscale(70%);
-    filter: grayscale(70%);
-    border-radius: 10px;
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@600;700&family=Noto+Serif:ital,wght@1,500&family=Oswald:wght@600&family=Tinos:ital@1&display=swap');
 
 .title {
     font-size: 3em;
     font-family: 'Noto Serif', serif;
-    color: rgb(253, 207, 120);
+    color: rgb(247, 190, 86);
     -webkit-text-stroke: 2px black;
     display: flex;
     justify-content: center;
+    animation: fadein 3.5s 1;
+    animation-fill-mode: forwards;
 }
 
-// .firstHr {
-//     width: 80%;
-//     margin-left: 10%;
-//     margin-bottom: 30px;
-//     border: 3px solid rgb(26, 26, 26);
-//     animation: fadein 3.5s 1;
-//     animation-fill-mode: forwards;
-//     opacity: 1;
-// }
+.firstHr {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    border: 3px solid rgb(26, 26, 26);
+    animation: fadein 3.5s 1;
+    animation-fill-mode: forwards;
+}
 
-// .wrap{
-//     display: flex;
-//     margin-bottom: 0px;
-//     margin-top: 100px;
-//     margin-left: 10%;
-//     // width: 90%;
-//     // margin-left: 10%;
-//     // padding: 2%;
-// }
-// .box {    
-//     display: inline;
-//     padding: 4%;
-//     margin-right: 5%;
-//     border-radius: 30%;
-//     align-items: center;
-//     font-family: 'Noto Serif', serif;
-//     border: 2px dotted black;
-//     margin-top: 50px;
-//     margin-bottom: 300px;
-//     margin-left: 40px;
-//     margin-right: 90px;
-// }
-// .firstParaTitle {
-//     font-size: 2em;
-// }
-// .firstPara {
-//     font-size: 1.3em;
-// }
-// .oldBath {
-//     margin-top: 25%;
-//     border-radius: 50%;
-//     width: 30%;
-//     height: 30%;
-// }
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.imgBlock {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+  .images {
+    width: 150px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 30%;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .tital {
+    position: absolute;
+    left: 28%;
+    top: 50%;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+
+  .firstBlock {
+    z-index: 10;
+  }
+
+  .firstBlock:hover {
+    .tital {
+      opacity: 1;
+    }
+  }
+
+
+
+  .contain {
+     display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 1%;
+    padding: 100px;
+    border-radius: 10%;
+    box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+    background: #fffef0;
+  }
+  .oldtext {
+    color: #7F3300;
+    margin-top: .75em;
+    margin-left: 1em;
+    text-align: justify;
+  }
+
+  .old {
+    font: var(--fontSize)/200% 'Bad Script', cursive;
+  }
+
+  .new {
+    font: var(--fontSize)/200%  cursive
+  }

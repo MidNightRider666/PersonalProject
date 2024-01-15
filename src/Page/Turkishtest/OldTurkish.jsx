@@ -32,7 +32,7 @@ function OldTurkish() {
         <p>
         Turkiškos pirties istorija siekia labai tolimus laikus, kai turkai dar nebuvo pasiekę Antalijos. Atvykę į Antaliją jie su savimi atsinešė senovines tradicijas, o taip pat susidūrė su kita tradicija – romų ir Bizantijos. Šių dviejų tradicijų mišinys leido atsirasti naujai Turkiškos pirties koncepcijai. Iš pradžių pirtis iš apačios būdavo šildoma šiltu oru, kuris patekdavo per specialius vamzdžius, kurie būdavo paslėpti po marmurinėmis pirties grindimis. Be to turkiška pirtis dar būdavo kaitinama didžiulio katilo pagalba, kuris būdavo įmontuojamas į sieną. Šis katilas atliko garų gamintojo vaidmenį. Vanduo katile virdavo (po juo būdavo krosnis), o susidarę garai patekdavo pro pakankamai nemažą angą, esančią maždaug pusantro metro aukštyje.
         </p>
-        <img className={css.image} src="https://blog.thermasol.com/wp-content/uploads/2019/02/1-header-3.jpg" alt="" />
+        {/* <img className={css.image} src="https://blog.thermasol.com/wp-content/uploads/2019/02/1-header-3.jpg" alt="" /> */}
       </div>
       </main>
       <svg>

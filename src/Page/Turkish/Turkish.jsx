@@ -1,46 +1,55 @@
-import React, { useEffect, useRef } from "react";
-import SecondNav from "../../Components/SecondNav/SecondNav";
+import React, { useState } from 'react'
 import css from "./Turkish.module.scss";
-import OldTurkish from "./OldTurkish";
-import NewTurkish from "./NewTurkish";
-import { useState } from "react";
-
-
-
+import SecondNav from '../../Components/SecondNav/SecondNav'
+import { arrTurkishData } from "../../Data/TurkishData.jsx";
+import { useEffect } from 'react';
 
 function Turkish() {
 
-    const [active, setActive] = useState(1);
-  const SetView = (active) => {
-    setActive(active);
+  const [currentSlide, setCurrentSlide] = useState(arrTurkishData[0]);
+  console.log(" currentSlide===", currentSlide);
+
+  useEffect(() => {
+    setCurrentSlide(arrTurkishData[0]);
+  }, []);
+
+  const handleclick1 = () => {
+    const slider = arrTurkishData[0];
+    setCurrentSlide(slider);
+    return;
   };
 
-  const ActiveView = () => {
-    switch (active) {
-      case 1:
-        return <OldTurkish />;
-      case 2:
-        return <NewTurkish />;
-    }
+  
+  const handleclick2 = () => {
+    const slider = arrTurkishData[1];
+    setCurrentSlide(slider);
+    return;
   };
 
-  console.log("actvie===", active);
 
 
   return (
     <div>
     <SecondNav/>
     <h1 className={css.title}>Turkish Bath</h1>
-    <div className={css.gallery}>
-    <img onClick={() => SetView(2)} className={css} src="https://lisamora.lt/wp-content/uploads/2015/12/3.17-1024x680.jpg" alt="" />
-    <img onClick={() => SetView(1)} className={css} src="https://blog.thermasol.com/wp-content/uploads/2019/02/1-header-3.jpg" alt="" />
+    <hr className={css.firstHr} />
+    <div className={css.imgBlock}>
+      <div className={css.firstBlock}>
+      <img onClick={handleclick1} className={css.images}  src="https://blog.thermasol.com/wp-content/uploads/2019/02/1-header-3.jpg" alt="" />
+      </div>
+      <div className={css.secondBlock}>
+      <img onClick={handleclick2} className={css.images} src="https://lisamora.lt/wp-content/uploads/2015/12/3.17-1024x680.jpg" alt="" />
+      </div>
     </div>
-    {ActiveView()}
+    <div className={css.contain}
+    >
+          <div className={currentSlide.id === 0 ? css.parchment : ''}></div>
+    <p className={`${css.oldtext} ${currentSlide.id === 0 ? css.old : css.new}`}>
+       {currentSlide.desc}
+        </p>
     </div>
-  );
-
+    </div>
+  )
 }
 
-  
-
-export default Turkish;
+export default Turkish

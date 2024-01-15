@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Noto+Serif:ital,wght@1,500&family=Tinos:ital@1&display=swap');
+
+.title {
+    font-size: 3em;
+    font-family: 'Noto Serif', serif;
+    color: rgb(247, 190, 86);
+    -webkit-text-stroke: 2px black;
+    display: flex;
+    justify-content: center;
+    animation: fadein 3.5s 1;
+    animation-fill-mode: forwards;
+}
+
+.firstHr {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    border: 3px solid rgb(26, 26, 26);
+    animation: fadein 3.5s 1;
+    animation-fill-mode: forwards;
+}
+
+.imgBlock{
+  animation: fadein 3.5s 1;
+  animation-fill-mode: forwards;
+    display: flex;
+}
+
+.russianBath {
+    height: auto;
+    border-radius: 40%;
+    margin-right: 10%;
+    width: 30%;
+    --g:#0000 ,#000 .5deg 90deg,#0000 91deg;
+    --m:
+      conic-gradient(from 45deg ,var(--g)) 20px 0  no-repeat,
+      conic-gradient(from 135deg,var(--g)) 0 20px  no-repeat,
+      conic-gradient(from 225deg,var(--g)) -20px 0 no-repeat,
+      conic-gradient(from 315deg,var(--g)) 0 -20px no-repeat;
+    -webkit-mask: var(--m);
+            mask: var(--m);
+    transition: .3s linear;
+    filter: grayscale(.5);
+  }
+  .russianBath:hover {
+    -webkit-mask-position: 0 0;
+            mask-position: 0 0;
+    filter: grayscale(0);
+  }
+
+  .russianText{
+    font-size: 2em;
+    font-family: 'Tinos', serif;
+    width: 80%;
+    padding-top: 5%;
+    margin-left: 10%;
+    margin-right: 5%;
+  }
+
+  .russianBathExplTitle {
+    margin-top: 5%;
+    font-size: 3em;
+    color:red;
+    -webkit-text-stroke: 1.5px blue;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .textBox {
+    display: flex;
+  }
+
+  .russianBathExpl{
+    font-size: 1.7em;
+    font-family: 'Tinos', serif;
+    width: 80%;
+    border: 2px dotted black;
+    padding: 3%;
+    border-radius: 20%;
+  }
+  .russianBathExpl1 {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 15%;
+  border-right:none;
+  animation: fadeinRight 3.5s 1;
+  animation-fill-mode: forwards;
+  }
+
+  .russianBathExpl2{
+    margin-top: 20%;
+    margin-right: 5%;
+    margin-left: -2%;
+    border-left: none;
+  }
+
+
+
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes fadeinLeft {
+    from {
+      margin-left: -30%;
+      opacity: 0;
+    }
+    to {
+      margin-left: 5%;
+      opacity: 1;
+    }
+  }

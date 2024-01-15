@@ -17,22 +17,11 @@ function Installation() {
   return (
     <div>
       <SecondNav />
-      <h1 className={css.pageTitle}>Instalation of baths</h1>
+      <h1 className={css.pageTitle}>{t("Instalation")}</h1>
       <hr className={css.firstHr} />
       <div className={css.block}>
         <p className={css.firstPara}>
-          Pirčių įrengimas, kaip ir bet kurie kiti remonto ar statybos darbai,
-          turi būti atliekami pagal technologijas, bei laikantis visų privalomų
-          normatyvų. Daugelį metų tobulinome savo įgūdžius, bei sukaupėme didelę
-          teorinę ir praktinę patirtį suomiškų, rusiškų ir garinių/turkiškų
-          pirčių projektavime ir įrengime. Pirčių įrengimas atliekamas laikantys
-          statybinių ir priešgaisrinių normatyvų. Pirties įrengimo procese
-          dalyvaujame nuo pradžios iki pabaigos, todėl esame tikri, kad
-          pasiūlysime Jums tokius sprendimus, kurie optimaliai atitiks Jūsų
-          suomiškos, rusiškos ar garinės/turkiškos pirties lūkesčius, bei bus
-          patikimi ir saugūs. Suomišką, rusišką bei garinę/turkišką pirtį galime
-          įrengti namuose, lauko statiniuose, viešbučiuose, butuose bei kitose
-          įprastose ar netradicinėse patalpose.
+        {t("Instalation2")}
         </p>
         <img
           className={css.image}
@@ -45,29 +34,23 @@ function Installation() {
         className={`${myElementIsVisible ? css.slideRight : ""}`}
       >
         <h1 className={css.startSecondPr}>
-          Pirčių įrengimas ir projektavimas. Ką mes siūlome?
+        {t("Instalation3")}
         </h1>
         <hr className={css.secondHr} />
       </div>
       <div ref={newRef1} className={css.list}>
         <ul>
           <li id={`${myElementIsVisible1 ? css.firstLi : ""}`}>
-            Atvyksime į Jūsų objektą, išmatuosime patalpas.
+          {t("Instalation4")}
           </li>
           <li id={`${myElementIsVisible1 ? css.secondLi : ""}`}>
-            Pasiūlysime kelis suomiškos, rusiškos ar garinės/turkiškos pirties
-            projektų variantus, suderinsime mūsų idėjas ir Jūsų lūkesčius.
-            Suomišką, rusišką ar garinę/turkišką pirtį įrengsime pagal
-            individualius užsakymus.
+          {t("Instalation5")}
           </li>
           <li id={`${myElementIsVisible1 ? css.thirdLi : ""}`}>
-            Pakonsultuosime suomiškos, rusiškos ar garinės/turkiškos pirties
-            įrengimo klausimais. Parduosime visą suomiškos, rusiškos ar
-            garinės/turkiškos pirties įrengimui būtiną įrangą.
+          {t("Instalation6")}
           </li>
           <li id={`${myElementIsVisible1 ? css.fourthLi : ""}`}>
-            Patys pagaminsime suomiškos, rusiškos ar garinės/turkiškos pirties
-            sienų, lubų, gultų formas.
+          {t("Instalation7")}
           </li>
         </ul>
         <img
@@ -86,9 +69,7 @@ function Installation() {
           alt=""
         />
         <h1 className={css.lastSentence}>
-          Ne tik garantinio laikotarpio metu atliksime remonto darbus, padėsime
-          išspręsti iškilusias problemas, jei įmanoma sutaisysime Jūsų
-          suomiškos, rusiškos ar garinės/turkiškos pirties įrangą!!!!
+        {t("Instalation8")}
         </h1>
       </div>
     </div>

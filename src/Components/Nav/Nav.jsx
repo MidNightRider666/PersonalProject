@@ -66,10 +66,10 @@ function Nav() {
 
   const variants = {
     open: { opacity: 0, x: 0 },
-    closed: { opacity: 0, x: "-100%" },
+    closed: { display: 0, x: "-100%" },
   };
-
-
+  console.log("i18n111===", i18next.language);
+  console.log("i18n===", i18n.language);
 
   return (
     <>
@@ -85,31 +85,31 @@ function Nav() {
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink  className={css.Link} as={NavLink} to={`/${i18n.language}/Installation`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
+              <NavLink  className={css.Link} to={`/${i18n.language}/Installation`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
             </motion.li>
             <motion.li
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink to={`/${i18n.language}/Turkish`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
+              <NavLink  to={`/${i18n.language}/Turkish`} activeStyle={activeStyle}>{t('captions')}</NavLink>
             </motion.li>
             <motion.li
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink to={`/${i18n.language}/Turkish`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
+              <NavLink to={`/${i18n.language}/Finnish`} activeStyle={activeStyle}>{t('captions2')}</NavLink>
             </motion.li>
             <motion.li
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink to={`/${i18n.language}/Turkish`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
+              <NavLink to={`/${i18n.language}/Russian`} activeStyle={activeStyle}>{t('RussianBath1')}</NavLink>
             </motion.li>
             <motion.li
               whileHover={{ backgroundColor: "rgb(244, 166, 98, 1)" }}
               whileTap={{ scale: 0.9 }}
             >
-              <NavLink to={`/${i18n.language}/Turkish`} activeStyle={activeStyle}>{t('Instalation')}</NavLink>
+              <NavLink to={`/${i18n.language}/Contacts`} activeStyle={activeStyle}>{t('Contacts')}</NavLink>
             </motion.li>
           </ul>
         </motion.div>
@@ -147,6 +147,7 @@ function Nav() {
                           // const halfpathnametest = `${halfPathName}`
                           i18next.changeLanguage(code);
                           window.history.replaceState(null, "", `${""}/${code}/${halfPathName}`)
+                          window.location.reload();
                           // window.location.assign(`${""}/${code}/${halfPathName}`);
                           // console.log("Testing: ", hostnametest)
                           // console.log("Testing2: ", savedhostnametest, codetest, halfpathnametest)

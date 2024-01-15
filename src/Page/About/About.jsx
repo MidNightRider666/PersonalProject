@@ -14,6 +14,7 @@ function About() {
     <div className={css.body}>
     <div className={css.aboutBody}>
       <h1 className={css.title}>About Us</h1>
+      <hr className={css.firstHr} />
       <div ref={myRef}  className={css.aboutDesc}>
         <p className={`${css.aboutText} ${myElementIsVisible ? css.fadeIn: ''}`}>
           {t('About')}
@@ -27,13 +28,18 @@ function About() {
       <div ref={newREf}className={css.aboutDesc}>
         <img
           className={`${css.aboutImg} ${newSectionIsVisible ? css.fadeIn: ''}`}
-          src="https://begalybe.lt/oc-content/uploads/70/22990.jpg"
+          src="https://s3.eu-central-1.amazonaws.com/rinka-lt/public/media/advertisements/24158092/conversions/Vilnius-gallery_preview.jpg"
           alt="Lisamora"
         />
                 <p className={`${css.aboutText} ${newSectionIsVisible ? css.fadeIn: ''}`}>
           {t('About1')}
         </p>
       </div>
+      <div className={css.lastSentence}>
+    <h3>
+        Contact us and we will make sure your wishes become a reality.
+        </h3>
+        </div>
     </div>
     </div>
   );
